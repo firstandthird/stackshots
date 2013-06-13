@@ -76,6 +76,72 @@ Or a single version or a combination of them:
 * IE 6 - Windows XP
 * IE 7 - Windows XP
 
+#### Current available browsers
+
+* `safari`
+* `chrome`
+* `firefox`
+* `opera`
+* `ie`
+* `mobile safari`
+* `android browser`
+
+Just add `"` if you need to add spaces:
+
+```
+--browser "chrome,mobile safari_6.0"
+```
+
+### `orientation`
+
+Orientation is usefull for Mobile Devices, otherwise, it is not. However, the program will not allow you to pass anything that's not `portrait` or `landscape`. By default is `portrait`.
+
+### `os`
+
+This is the Operating System in which you can request Screenshots.
+
+```
+--os "OS X"
+```
+
+The program is smart enough to know your intentions... some times. Let's say you want to get Firefox screenshots from Mac and screenshots from IE 8:
+
+```
+--os "OS X" --browser firefox,ie_8
+```
+
+Will get you:
+
+* Firefox 20 - Snow Leopard
+* Firefox 20 - Lion
+* Firefox 20 - Mountain Lion
+* IE 8 - Windows 7
+
+You can specify the version with an underscore `_`:
+
+```
+--os "OS X_Mountain Lion" --browser firefox,ie_8
+```
+
+#### Currently available OS and versions
+
+| Operating System | Version       |
+| ---------------- |:-------------:|
+| **OS X**         | Snow Leopard  |
+| **OS X**         | Lion          |
+| **OS X**         | Mountain Lion |
+| **Windows**      | XP            |
+| **Windows**      | 8             |
+| **Windows**      | 7             |
+| **ios**          | 5.0           |
+| **ios**          | 5.1           |
+| **ios**          | 6.0           |
+| **android**      | 4.2           |
+| **android**      | 4.0           |
+| **android**      | 4.1           |
+| **android**      | 2.3           |
+| **android**      | 2.2           |
+
 ##Development and Tests
 
 ```
