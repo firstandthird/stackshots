@@ -142,6 +142,47 @@ You can specify the version with an underscore `_`:
 | **android**      | 2.3           |
 | **android**      | 2.2           |
 
+### `device`
+
+The device from which you want to take a screenshot.
+
+```
+--device "iPhone 5"
+```
+
+### Currently available devices in browsers and os versions
+
+| Browser | Device       | OS Version       |
+| ---------------- |:-------------:|:-------------:|
+| **Mobile Safari** | iPad 2 (5.0) | 5.0|
+| **Mobile Safari** | iPhone 4S | 5.1|
+| **Mobile Safari** | iPad 3rd | 5.1|
+| **Mobile Safari** | iPhone 4S (6.0) | 6.0|
+| **Mobile Safari** | iPhone 5 | 6.0|
+| **Mobile Safari** | iPad 3rd (6.0) | 6.0|
+| **Android Browser** | LG Nexus 4 | 4.2|
+| **Android Browser** | Samsung Galaxy Tab 2 10.1 | 4.0|
+| **Android Browser** | Samsung Galaxy Nexus | 4.0|
+| **Android Browser** | Motorola Atrix HD | 4.0|
+| **Android Browser** | Motorola Razr | 4.0|
+| **Android Browser** | HTC Evo 3D | 4.0|
+| **Android Browser** | HTC One X | 4.0|
+| **Android Browser** | Sony Xperia Tipo | 4.0|
+| **Android Browser** | Amazon Kindle Fire 2 | 4.0|
+| **Android Browser** | Amazon Kindle Fire HD 8.9 | 4.0|
+| **Android Browser** | Samsung Galaxy Note 10.1 | 4.0|
+| **Android Browser** | Samsung Galaxy S III | 4.1|
+| **Android Browser** | Samsung Galaxy Note II | 4.1|
+| **Android Browser** | Motorola Razr Maxx HD | 4.1|
+| **Android Browser** | Google Nexus 7 | 4.1|
+| **Android Browser** | Samsung Galaxy S II | 2.3|
+| **Android Browser** | Samsung Galaxy Note | 2.3|
+| **Android Browser** | Motorola Droid Razr | 2.3|
+| **Android Browser** | Motorola Droid 4 | 2.3|
+| **Android Browser** | Samsung Galaxy S | 2.2|
+| **Android Browser** | HTC Wildfire | 2.2|
+| **Android Browser** | LG Optimus 3D | 2.2|
+
 ##Development and Tests
 
 ```
