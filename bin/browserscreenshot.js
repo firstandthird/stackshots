@@ -30,7 +30,7 @@ var argv = optimist
   .describe('h', 'Shows help info')
   .check(function(argv){
     if (orientations.indexOf(argv.orientation) === -1){
-      throw new Error('Orientation has to bee one of this values ' + orientations.join('|'))
+      throw new Error('Orientation has to bee one of this values ' + orientations.join('|'));
     }
   })
   .argv;
@@ -51,7 +51,7 @@ if (os){
   osVersions = {};
   for (var i = 0, len = os.length; i < len; i++){
     var osAndVersion = os[i].split('_');
-    if (typeof osVersions[osAndVersion[0]] === "undefined") {
+    if (typeof osVersions[osAndVersion[0]] === 'undefined') {
       osVersions[osAndVersion[0]] = [];
     }
     if (auxOs.indexOf(osAndVersion[0]) === -1){
