@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "name": "browserscreenshot",
   "description": "A command line interface to get screenshots from BrowserStack's Screenshot API",
@@ -29,3 +30,31 @@
   },
   "main": "./lib/browserscreenshot.js"
 }
+=======
+{
+  "name": "browserscreenshot",
+  "description": "A command line interface to get screenshots from BrowserStack's Screenshot API",
+  "version": "0.1.0",
+  "homepage": "https://github.com/Belelros/node-browserscreenshot",
+  "author": "Antonio Laguna <@Belelros>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Belelros/node-browserscreenshot.git"
+  },
+  "dependencies": {
+    "extend" :  "1.1.x",
+    "optimist": "0.3.x",
+    "async": "0.2.X"
+  },
+  "devDependencies": {
+    "mocha": "1.6.0",
+    "grunt": "0.3.17",
+    "grunt-simple-mocha": "0.2.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "bin": { "browserscreenshot": "./bin/browserscreenshot.js" },
+  "main": "./lib/browserscreenshot.js"
+}
+>>>>>>> Version 0.1.0
