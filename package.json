@@ -1,7 +1,7 @@
 {
   "name": "browserscreenshot",
   "description": "A command line interface to get screenshots from BrowserStack's Screenshot API",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "homepage": "https://github.com/Belelros/node-browserscreenshot",
   "author": "Antonio Laguna <@Belelros>",
   "repository": {

@@ -9,9 +9,8 @@ var fs = require('fs'),
 var orientations = ['portrait','landscape'];
 
 var argv = optimist
-<<<<<<< HEAD
   .usage('browserscreenshot '+version+'\nUsage: $0 [opts]')
-  .demand(['u','p','b'])
+  .demand(['u','p'])
   .alias('u','username')
   .describe('u', 'The email you use to log in to Browserstack')
   .alias('p','password')
@@ -19,57 +18,30 @@ var argv = optimist
   .alias('w','website')
   .describe('w', 'The website(s) from which you want to get screenshots. Comma separated list')
   .alias('b','browser')
+  .default('b','IE_8,IE_9,Chrome,Firefox')
   .describe('b', 'The browser(s) from which you want to get screenshots. Comma separated list')
   .alias('o','orientation')
   .describe('o', 'Orientation of the device (portrait|landscape).')
   .default('o','portrait')
   .alias('s','os')
   .describe('s', 'Operating System of the browser separating version with underscore (windows_xp). Comma separated list')
+  .default('s', 'windows_7')
   .alias('d','device')
   .describe('d', 'The device(s) from which you want to get screenshots. Comma separated list')
+  .alias('f', 'folder')
+  .describe('f', 'Folder in which screenshots will be stored')
+  .default('f', process.cwd())
+  .alias('l','ls')
+  .describe('l','Instead of getting images, it will output a list of browsers and OS available')
+  .boolean('l')
   .alias('h','help')
   .describe('h', 'Shows help info')
   .check(function(argv){
     if (orientations.indexOf(argv.orientation) === -1){
-      throw new Error('Orientation has to bee one of this values ' + orientations.join('|'));
+      throw new Error('Orientation has to bee one of this values ' + orientations.join('|'))
     }
   })
   .argv;
-=======
-    .usage('browserscreenshot '+version+'\nUsage: $0 [opts]')
-    .demand(['u','p'])
-    .alias('u','username')
-    .describe('u', 'The email you use to log in to Browserstack')
-    .alias('p','password')
-    .describe('p', 'Your account\'s password')
-    .alias('w','website')
-    .describe('w', 'The website(s) from which you want to get screenshots. Comma separated list')
-    .alias('b','browser')
-    .default('b','IE_8,IE_9,Chrome,Firefox')
-    .describe('b', 'The browser(s) from which you want to get screenshots. Comma separated list')
-    .alias('o','orientation')
-    .describe('o', 'Orientation of the device (portrait|landscape).')
-    .default('o','portrait')
-    .alias('s','os')
-    .describe('s', 'Operating System of the browser separating version with underscore (windows_xp). Comma separated list')
-    .default('s', 'windows_7')
-    .alias('d','device')
-    .describe('d', 'The device(s) from which you want to get screenshots. Comma separated list')
-    .alias('f', 'folder')
-    .describe('f', 'Folder in which screenshots will be stored')
-    .default('f', process.cwd())
-    .alias('l','ls')
-    .describe('l','Instead of getting images, it will output a list of browsers and OS available')
-    .boolean('l')
-    .alias('h','help')
-    .describe('h', 'Shows help info')
-    .check(function(argv){
-      if (orientations.indexOf(argv.orientation) === -1){
-        throw new Error('Orientation has to bee one of this values ' + orientations.join('|'))
-      }
-    })
-    .argv;
->>>>>>> Version 0.1.0
 
 if (argv.help) {
   return optimist.showHelp(function(help) {
@@ -153,5 +125,4 @@ var client = new browserscreenshot({
       }
     }
   }
-
 });
