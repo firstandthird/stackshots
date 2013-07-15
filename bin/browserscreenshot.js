@@ -53,25 +53,6 @@ var candidateBrowsers = argv.browser.toLowerCase().split(','),
     os = argv.os ? argv.os.toLowerCase().split(',') : null,
     devices = argv.device ? argv.device.toLowerCase().split(',') : null;
 
-var auxOs = [], osVersions = null;
-
-if (os){
-  osVersions = {};
-  for (var i = 0, len = os.length; i < len; i++){
-    var osAndVersion = os[i].split('_');
-    if (typeof osVersions[osAndVersion[0]] === 'undefined') {
-      osVersions[osAndVersion[0]] = [];
-    }
-    if (auxOs.indexOf(osAndVersion[0]) === -1){
-      auxOs.push(osAndVersion[0]);
-    }
-    if (osAndVersion[1]){
-      osVersions[osAndVersion[0]].push(osAndVersion[1]);
-    }
-  }
-  os = auxOs;
-}
-
 var client = new browserscreenshot({
   email : argv.username,
   password : argv.password,
@@ -95,8 +76,9 @@ var client = new browserscreenshot({
     }
   }
   else {
-    var browsers = client.guessBrowsers(candidateBrowsers,os,osVersions, devices);
-    var urls = argv.website ? argv.website.split(',') : null, functions = [];
+    var preparedOS = client.prepareOS(os),
+        browsers = client.guessBrowsers(candidateBrowsers,preparedOS.os,preparedOS.osVersions, devices),
+        urls = argv.website ? argv.website.split(',') : null, functions = [];
 
     if (!browsers){
       throw new Error('Invalid browsers supplied');
