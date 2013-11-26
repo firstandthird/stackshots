@@ -10,11 +10,11 @@ var orientations = ['portrait','landscape'];
 
 var argv = optimist
   .usage('browserscreenshot '+version+'\nUsage: $0 [opts]')
-  .demand(['u','p'])
+  .demand(['u','k'])
   .alias('u','username')
   .describe('u', 'The email you use to log in to Browserstack')
-  .alias('p','password')
-  .describe('p', 'Your account\'s password')
+  .alias('k','accesskey')
+  .describe('k', 'Your api access key')
   .alias('w','website')
   .describe('w', 'The website(s) from which you want to get screenshots. Comma separated list')
   .alias('b','browser')
@@ -55,7 +55,7 @@ var candidateBrowsers = argv.browser.toLowerCase().split(','),
 
 var client = new browserscreenshot({
   email : argv.username,
-  password : argv.password,
+  password : argv.accesskey,
   folder : argv.folder
 }, function(){
   if (argv.l){
