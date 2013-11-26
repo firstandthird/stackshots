@@ -38,7 +38,7 @@ var argv = optimist
   .describe('h', 'Shows help info')
   .check(function(argv){
     if (orientations.indexOf(argv.orientation) === -1){
-      throw new Error('Orientation has to bee one of this values ' + orientations.join('|'))
+      throw new Error('Orientation has to bee one of this values ' + orientations.join('|'));
     }
   })
   .argv;
@@ -64,12 +64,13 @@ var client = new browserscreenshot({
         var versions = [];
         console.log('Browser: %s', browser);
         console.log('OS: %s', client.browsers[browser].os.join(', '));
-        client.browsers[browser].list.forEach(function(version){
+        for (var i = 0, c = client.browsers[browser].list.length; i < c; i++) {
+          var version = client.browsers[browser].list[i];
           var browserVersion = version.browser_version || version.os_version;
           if (versions.indexOf(browserVersion) === -1){
             versions.push(browserVersion);
           }
-        });
+        }
         console.log('Versions: %s', versions.join(', '));
         console.log('');
       }

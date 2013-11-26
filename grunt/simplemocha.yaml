@@ -1,0 +1,6 @@
+all:
+  options:
+    ui: 'tdd'
+    reporter: 'Spec'
+  src:
+    - 'test/**/*.js'
