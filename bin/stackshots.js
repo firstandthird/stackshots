@@ -34,6 +34,9 @@ var argv = optimist
   .alias('l','ls')
   .describe('l','Instead of getting images, it will output a list of browsers and OS available')
   .boolean('l')
+  .alias('t','tunnel')
+  .describe('t','Enable tunnel support')
+  .boolean('t')
   .alias('h','help')
   .describe('h', 'Shows help info')
   .check(function(argv){
@@ -92,7 +95,7 @@ var client = new browserscreenshot({
               url : url,
               orientation : argv.orientation,
               browsers : browsers,
-              tunnel: true
+              tunnel: argv.tunnel
             };
             console.log('Requesting images for %s', url);
             client.getImages(request,cb);
