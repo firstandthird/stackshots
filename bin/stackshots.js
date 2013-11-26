@@ -91,7 +91,8 @@ var client = new browserscreenshot({
             var request = {
               url : url,
               orientation : argv.orientation,
-              browsers : browsers
+              browsers : browsers,
+              tunnel: true
             };
             console.log('Requesting images for %s', url);
             client.getImages(request,cb);

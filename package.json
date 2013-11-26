@@ -23,7 +23,7 @@
     "test": "mocha"
   },
   "bin": {
-    "browserscreenshot": "./bin/browserscreenshot.js"
+    "stackshots": "./bin/stackshots.js"
   },
-  "main": "./lib/browserscreenshot.js"
+  "main": "./lib/stackshots.js"
 }
