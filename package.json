@@ -8,16 +8,16 @@
     "url": "https://github.com/firstandthird/stackshots.git"
   },
   "dependencies": {
-    "extend": "1.1.x",
-    "optimist": "0.3.x",
-    "async": "0.2.X"
+    "extend": "~3.0.0",
+    "optimist": "~0.6.1",
+    "async": "~2.1.4"
   },
   "devDependencies": {
-    "grunt": "0.4.1",
+    "grunt": "1.0.1",
     "grunt-simple-mocha": "~0.4.0",
-    "load-grunt-config": "~0.7.0",
-    "grunt-contrib-watch": "~0.5.3",
-    "grunt-contrib-jshint": "~0.7.2"
+    "load-grunt-config": "~0.19.2",
+    "grunt-contrib-watch": "~1.0.0",
+    "grunt-contrib-jshint": "~1.1.0"
   },
   "scripts": {
     "test": "mocha"
